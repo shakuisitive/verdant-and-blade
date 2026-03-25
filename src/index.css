@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Syne:wght@400..800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Sage Teal #4A9B8A */
+    --primary: 166 35% 45%;
+    --primary-foreground: 40 20% 98%;
+    --primary-tint-1: 168 36% 56%;
+    --primary-tint-2: 168 38% 67%;
+    --primary-tint-3: 170 42% 82%;
+    --primary-shade-1: 164 33% 32%;
+    --primary-shade-2: 162 37% 22%;
+    --primary-shade-3: 162 32% 17%;
+
+    /* Warm Brass Wood #C4956A */
+    --secondary: 25 42% 59%;
+    --secondary-foreground: 162 32% 17%;
+    --secondary-tint-1: 28 48% 68%;
+    --secondary-tint-2: 30 52% 76%;
+    --secondary-tint-3: 32 48% 88%;
+    --secondary-shade-1: 24 40% 45%;
+    --secondary-shade-2: 25 47% 34%;
+
+    /* Concrete Stone #E8E4DE */
+    --neutral: 40 14% 88%;
+    --neutral-tint-1: 40 20% 93%;
+    --neutral-tint-2: 40 20% 98%;
+    --neutral-shade-1: 38 12% 78%;
+    --neutral-shade-2: 35 10% 65%;
+    --neutral-shade-3: 33 8% 52%;
+
+    /* Forest Night #1F3D35 */
+    --deep: 162 32% 17%;
+    --deep-foreground: 40 20% 95%;
+    --deep-tint-1: 162 30% 26%;
+    --deep-tint-2: 162 28% 34%;
+
+    --background: 40 14% 88%;
+    --foreground: 162 32% 17%;
+    --card: 40 20% 99%;
+    --card-foreground: 162 32% 17%;
+    --popover: 40 20% 99%;
+    --popover-foreground: 162 32% 17%;
+    --muted: 40 12% 82%;
+    --muted-foreground: 33 8% 42%;
+    --accent: 25 42% 59%;
+    --accent-foreground: 162 32% 17%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 38 12% 78%;
+    --input: 38 12% 78%;
+    --ring: 166 35% 45%;
+    --radius: 1.25rem;
+
+    --cream: 40 20% 95%;
+    --body-subtle: 0 0% 24%;
+
+    --sidebar-background: 162 32% 17%;
+    --sidebar-foreground: 40 20% 95%;
+    --sidebar-primary: 166 35% 45%;
+    --sidebar-primary-foreground: 40 20% 98%;
+    --sidebar-accent: 25 42% 59%;
+    --sidebar-accent-foreground: 162 32% 17%;
+    --sidebar-border: 162 30% 26%;
+    --sidebar-ring: 166 35% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+  h1,
+  .font-display {
+    font-family: "Syne", sans-serif;
+  }
+  h2,
+  h3,
+  .font-serif-display {
+    font-family: "Fraunces", serif;
+  }
+}
+
+@layer components {
+  .organic-section-top {
+    border-radius: 0 0 4rem 3rem;
+  }
+  .organic-section-bottom {
+    border-radius: 4rem 3rem 0 0;
+  }
+  .blob-organic {
+    border-radius: 60% 40% 55% 45% / 40% 60% 40% 60%;
+  }
+
+  .rdp {
+    --rdp-accent-color: hsl(var(--primary));
+    --rdp-selected-color: hsl(var(--primary-foreground));
+    --rdp-background-color: hsl(var(--card));
+  }
+  .rdp-button_reset.rdp-day_selected,
+  .rdp-day_selected,
+  button.rdp-day_selected {
+    border-radius: 9999px !important;
+    background-color: hsl(var(--primary)) !important;
+    color: hsl(var(--primary-foreground)) !important;
+    min-width: var(--rdp-cell-size, 2.875rem) !important;
+    min-height: var(--rdp-cell-size, 2.875rem) !important;
+    width: var(--rdp-cell-size, 2.875rem) !important;
+    height: var(--rdp-cell-size, 2.875rem) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .rdp-day_selected:hover,
+  .rdp-day_selected:focus-visible {
+    border-radius: 9999px !important;
+    background-color: hsl(var(--primary-shade-1)) !important;
+    color: hsl(var(--primary-foreground)) !important;
+  }
+}
